@@ -9,6 +9,8 @@ class userController {
   ): Promise<void> => {
     const createUser = container.resolve(CreateUserService);
     const { name, email, password } = request.body;
+    console.log(name);
+
     const userCreated = await createUser.execute({
       name,
       email,

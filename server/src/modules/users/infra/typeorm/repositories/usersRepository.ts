@@ -1,6 +1,6 @@
 import { ICreateUserDTO } from '@modules/users/dtos/ICreateUserDTO';
 import IUserRepository from '@modules/users/repositories/IUsersRepository';
-import { getRepository } from 'typeorm';
+import { getRepository, Repository } from 'typeorm';
 import User from '../entities/User';
 
 interface IfinAnEmail {
@@ -8,18 +8,22 @@ interface IfinAnEmail {
 }
 
 class UsersRepository implements IUserRepository {
-  constructor(private userRepository = getRepository(User)) {}
+  private ormRepository: Repository<User>;
+
+  constructor() {
+    this.ormRepository = getRepository(User);
+  }
 
   public async FindAnEmail({ email }: IfinAnEmail): Promise<User | undefined> {
-    const user = await this.userRepository.findOne(email);
+    const user = await this.ormRepository.findOne(email);
 
     return user;
   }
 
   public async CreateUser(data: ICreateUserDTO): Promise<User> {
-    const user = this.userRepository.create(data);
+    const user = this.ormRepository.create(data);
 
-    await this.userRepository.save(user);
+    await this.ormRepository.save(user);
 
     return user;
   }
