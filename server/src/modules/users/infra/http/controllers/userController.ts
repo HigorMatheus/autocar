@@ -7,18 +7,14 @@ class userController {
     request: Request,
     response: Response,
   ): Promise<void> => {
-    try {
-      const createUser = container.resolve(CreateUserService);
-      const { name, email, password } = request.body;
-      const userCreated = await createUser.execute({
-        name,
-        email,
-        password,
-      });
-      response.json(userCreated);
-    } catch (error) {
-      response.json(error);
-    }
+    const createUser = container.resolve(CreateUserService);
+    const { name, email, password } = request.body;
+    const userCreated = await createUser.execute({
+      name,
+      email,
+      password,
+    });
+    response.json(userCreated);
   };
 }
 

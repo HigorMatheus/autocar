@@ -1,10 +1,11 @@
 import 'reflect-metadata';
 import 'dotenv/config';
-import '@shared/container';
+
 import express from 'express';
 import routes from './routes/index';
 
-import '../typeorm/index';
+import '@shared/infra/typeorm';
+import '@shared/container';
 
 const app = express();
 

@@ -15,10 +15,9 @@ class CreateUserService {
   ) {}
 
   public async execute({ name, email, password }: ICreateUser): Promise<User> {
-    // const userExists = this.userRepository.FindAnEmail({ email });
+    // const userExists = await this.usersRepository.FindAnEmail;
 
     // if (userExists) {
-    //   // eslint-disable-next-line no-console
     //   console.log('err');
     // }
 
