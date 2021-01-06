@@ -8,14 +8,14 @@ interface IfinAnEmail {
   email: string;
 }
 
-class fakeUsersRepository implements IUserRepository {
+class FakeUsersRepository implements IUserRepository {
   private users: User[] = [];
 
   // constructor(parameters) {}
   async FindAnEmail({ email }: IfinAnEmail): Promise<User | undefined> {
-    const userExits = this.users.filter(user => user.email === email);
+    const userIndex = this.users.findIndex(user => user.email === email);
 
-    const user1 = userExits[0];
+    const user1 = this.users[userIndex];
 
     return user1;
   }
@@ -35,4 +35,4 @@ class fakeUsersRepository implements IUserRepository {
   }
 }
 
-export default fakeUsersRepository;
+export default FakeUsersRepository;
