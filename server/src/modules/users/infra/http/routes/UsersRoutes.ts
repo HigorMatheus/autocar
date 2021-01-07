@@ -2,10 +2,11 @@ import { Router } from 'express';
 
 import { getRepository } from 'typeorm';
 import User from '@modules/users/infra/typeorm/entities/User';
-import UserController from '../controllers/userController';
+import UserController from '../controllers/UserController';
 
 const usersRoutes = Router();
 const userController = new UserController();
+
 usersRoutes.post('/create', userController.create);
 
 usersRoutes.get('/', async (req, res) => {

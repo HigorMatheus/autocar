@@ -2,6 +2,7 @@ import 'reflect-metadata';
 import 'dotenv/config';
 
 import express, { NextFunction, Request, Response } from 'express';
+import 'express-async-errors';
 import AppError from '@shared/errors/AppError';
 import routes from './routes/index';
 
@@ -21,6 +22,8 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
       message: err.message,
     });
   }
+  // eslint-disable-next-line no-console
+  console.log(err);
 
   return response.status(500).json({
     status: 'error',

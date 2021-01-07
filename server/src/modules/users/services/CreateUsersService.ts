@@ -1,8 +1,9 @@
-import 'reflect-metadata';
 import { inject, injectable } from 'tsyringe';
 
+import AppError from '@shared/errors/AppError';
 import User from '../infra/typeorm/entities/User';
 import IUsersRepository from '../repositories/IUsersRepository';
+import IHashProvider from '../providers/hashProvider/models/IHashProvide';
 
 interface ICreateUser {
   name: string;
@@ -14,19 +15,26 @@ class CreateUserService {
   constructor(
     @inject('UsersRepository')
     private usersRepository: IUsersRepository,
+    @inject('HashProvider')
+    private hashProvider: IHashProvider,
   ) {}
 
   public async execute({ name, email, password }: ICreateUser): Promise<User> {
-    // const userExists = await this.usersRepository.FindAnEmail;
+    console.log(email);
 
-    // if (userExists) {
-    //   console.log('err');
-    // }
+    const userExist = await this.usersRepository.FindAnEmail({ email });
+    console.log(userExist);
+
+    if (userExist) {
+      throw new AppError('Email address already used.');
+    }
+
+    const hashedPassword = await this.hashProvider.generateHash(password);
 
     const user = {
       name,
       email,
-      password,
+      password: hashedPassword,
     };
 
     const userCreated = await this.usersRepository.CreateUser(user);
