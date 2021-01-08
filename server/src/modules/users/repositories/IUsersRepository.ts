@@ -1,12 +1,9 @@
-import { ICreateUserDTO } from '../dtos/ICreateUserDTO';
+import { ICreateUserDTO } from '../dtos/IUsersDTO';
 import User from '../infra/typeorm/entities/User';
 
-interface IfinAnEmail {
-  email: string;
-}
-interface IUsersRepository {
+export default interface IUsersRepository {
   CreateUser(data: ICreateUserDTO): Promise<User>;
-  FindAnEmail({ email }: IfinAnEmail): Promise<User | undefined>;
+  FindAnEmail(email: string): Promise<User | undefined>;
+  FindAnId(id: string): Promise<User | undefined>;
+  save(user: User): Promise<User>;
 }
-
-export default IUsersRepository;
