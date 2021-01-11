@@ -2,12 +2,12 @@ import React from "react";
 
 import { Container } from "./styles";
 
-const Products: React.FC = () => {
+const Profile: React.FC = () => {
   return (
     <Container>
-      <h1>Products</h1>
+      <h1>Profile</h1>
     </Container>
   );
 };
 
-export default Products;
+export default Profile;

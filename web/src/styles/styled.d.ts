@@ -3,21 +3,28 @@ import "styled-components";
 declare module "styled-components" {
   export interface DefaultTheme {
     title: string;
-
     colors: {
-      primary: string;
-      secondary: string;
-      titleInPrimary: string;
-      textInputy: string;
-      primarydark: string;
-      border: string;
-      textTitle: string;
-      backgroundProduct: string;
+      li: string;
+      text: string;
+      inputColor: string;
+      inputPlaceholder: string;
+      strongSchedule: string;
+      productBackground: string;
+      dayPicker: string;
+      dayAvailableBackground: string;
+      dayAvailableBackgroundHover: string;
       background: string;
-      backgroundComplement: string;
-      backgroundInput: string;
-      borderInput: string;
-      bgtext: string;
+      productBackground: string;
+      primaryLighter: string;
+      primaryLight: string;
+      primary: string;
+      primaryDark: string;
+      primaryDarker: string;
+      secondary: string;
+      secondaryDark: string;
+      titleInPrimary: string;
+      textInPrimary: string;
+      textTitle: string;
       textComplement: string;
       textBase: string;
       lineInWhite: string;
@@ -26,7 +33,6 @@ declare module "styled-components" {
       boxBase: string;
       boxFooter: string;
       smallInfo: string;
-      backgroundNav: string;
     };
   }
 }

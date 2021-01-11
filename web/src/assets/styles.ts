@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
   :root{
-
       /*tamanho da fonte padão: 16px - 100% - 1rem*/
       font-size: 60%; /* controle das medidas rem */
   }

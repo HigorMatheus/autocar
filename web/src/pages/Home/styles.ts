@@ -20,7 +20,7 @@ export const NavHome = styled.div`
   margin: 0 auto;
   display: flex;
   max-width: 95rem;
-  background: ${(props) => props.theme.colors.backgroundNav};
+  background: ${(props) => props.theme.colors.background};
   flex-wrap: wrap;
   a {
     background: #3568;
@@ -58,7 +58,7 @@ export const ProductList = styled.div`
 
 export const Product = styled.div`
   margin: 0.5rem;
-  background: ${(props) => props.theme.colors.backgroundProduct};
+  background: ${(props) => props.theme.colors.productBackground};
   border-radius: 1rem;
   width: 18rem;
   text-align: center;

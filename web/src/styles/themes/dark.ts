@@ -1,37 +1,33 @@
 export default {
   title: "dark",
-
   colors: {
-    primary: " #ebedee",
-    secondary: "#999591",
+    li: "#232129",
+    text: "#FFFFFF",
+    inputColor: "#f4ede8",
+    inputPlaceholder: "#666360",
+    strongSchedule: "#999591",
+    productBackground: "#3e3b47",
+    dayPicker: "#28262e",
+    dayAvailableBackground: "#3e3b47",
+    dayAvailableBackgroundHover: "#2f2c35",
+    background: "#000000",
+    primaryLighter: "#9871F5",
+    primaryLight: "#916BEA",
+    primary: "#333",
+    primaryDark: "#774DD6",
+    primaryDarker: "#6842C2",
+    secondary: "#04D361",
+    secondaryDark: "#04BF58",
     titleInPrimary: "#FFFFFF",
-    textInputy: "#f4ede8",
-    primarydark: "#232129",
-
-    border: "#FF9000",
-    textTitle: " #F4EDE8",
-
-    backgroundProduct: "#999591",
-    background: "#666360",
-    backgroundComplement: "#3E3B47",
-    backgroundInput: "#232129",
-    borderInput: "#28262E",
-    bgtext: "#312E38",
-
-    textComplement: "#9C98A6",
-
-    textBase: "#6A6180",
-
-    lineInWhite: "#E6E6F0",
-
-    inputBackground: "#F8F8FC",
-
+    textInPrimary: "#E5E5E5",
+    textTitle: "#FFFFFF",
+    textComplement: "#E5E5E5",
+    textBase: "#E5E5E5",
+    lineInWhite: "#191919",
+    inputBackground: "#181818",
     buttonText: "#FFFFFF",
-
-    boxBase: "#FFFF00",
-
-    boxFooter: "#FAFAFC",
-
+    boxBase: "#202020",
+    boxFooter: "#191919",
     smallInfo: "#C1BCCC",
   },
 };

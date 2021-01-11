@@ -1,15 +1,44 @@
-import React from "react";
-import logo from "../../assets/img/logo2.png";
-import Input from "../Input";
-import { Container } from "./styles";
+import React, { useState, useContext } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
 
-const Header: React.FC = () => {
+import { Link } from "react-router-dom";
+import Switch from "react-switch";
+import { ThemeContext } from "styled-components";
+import logo from "../../assets/img/logo2.png";
+import { Container, Nav, NavMenu, MenuIcon } from "./styles";
+
+interface Iheaderprops {
+  toggleTheme(): void;
+}
+const Header: React.FC<Iheaderprops> = ({ toggleTheme }) => {
+  const { colors, title } = useContext(ThemeContext);
+  const [open, setOpen] = useState(false);
   return (
     <Container>
-      <div>
-        <img src={logo} alt="" srcSet="" />
-        <Input />
-      </div>
+      <Nav>
+        <img src={logo} alt="" />
+        <MenuIcon open={open} onClick={() => setOpen(!open)}>
+          {open ? <FiX /> : <FiMenu />}
+        </MenuIcon>
+        <NavMenu open={open}>
+          <Link to="/">Home</Link>
+          <Link to="/products">Products</Link>
+          <Link to="/profile">Profile</Link>
+          <Link to="/signin">Signin</Link>
+
+          <Switch
+            onChange={toggleTheme}
+            checked={title === "dark"}
+            checkedIcon={false}
+            uncheckedIcon={false}
+            height={10}
+            width={40}
+            handleDiameter={20}
+            offColor={colors.secondaryDark}
+            onColor={colors.primaryDark}
+          />
+        </NavMenu>
+      </Nav>
     </Container>
   );
 };

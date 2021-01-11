@@ -1,14 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Header from "../../components/Header";
-
 import { Baner, Container, NavHome, ProductList, Product } from "./styles";
 
 const Home: React.FC = () => {
   return (
     <Container>
-      <Header />
       <Baner />
 
       <NavHome>
