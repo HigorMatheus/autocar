@@ -3,10 +3,6 @@ import IUserRepository from '@modules/users/repositories/IUsersRepository';
 import { getRepository, Repository } from 'typeorm';
 import User from '../entities/User';
 
-interface IfinAnEmail {
-  email: string;
-}
-
 class UsersRepository implements IUserRepository {
   private ormRepository: Repository<User>;
 
@@ -14,7 +10,15 @@ class UsersRepository implements IUserRepository {
     this.ormRepository = getRepository(User);
   }
 
-  public async FindAnEmail({ email }: IfinAnEmail): Promise<User | undefined> {
+  public async FindAnId(id: string): Promise<User | undefined> {
+    const user = await this.ormRepository.findOne({
+      where: { id },
+    });
+
+    return user;
+  }
+
+  public async FindAnEmail(email: string): Promise<User | undefined> {
     const user = await this.ormRepository.findOne({
       where: { email },
     });
@@ -27,6 +31,10 @@ class UsersRepository implements IUserRepository {
 
     await this.ormRepository.save(user);
 
+    return user;
+  }
+
+  public async save(user: User): Promise<User> {
     return user;
   }
 }

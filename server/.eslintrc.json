@@ -25,6 +25,7 @@
   ],
   "rules": {
     "camelcase":"off",
+    "import/no-unresolved": "off",
     "no-underscore-dangle": "off",
     "prettier/prettier": "error",
     "class-methods-use-this": "off",
@@ -34,7 +35,6 @@
     "@typescript-eslint/no-unused-vars": ["error", {
       "argsIgnorePattern": "_"
     }],
-    // "@typescript-eslint/interface-name-prefix": ["error", { "prefixWithI": "" }],
     "import/extensions": [
       "error",
       "ignorePackages",
