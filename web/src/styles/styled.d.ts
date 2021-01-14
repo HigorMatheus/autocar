@@ -4,35 +4,25 @@ declare module "styled-components" {
   export interface DefaultTheme {
     title: string;
     colors: {
-      li: string;
-      text: string;
-      inputColor: string;
-      inputPlaceholder: string;
-      strongSchedule: string;
-      productBackground: string;
-      dayPicker: string;
-      dayAvailableBackground: string;
-      dayAvailableBackgroundHover: string;
-      background: string;
-      productBackground: string;
-      primaryLighter: string;
-      primaryLight: string;
       primary: string;
       primaryDark: string;
-      primaryDarker: string;
       secondary: string;
       secondaryDark: string;
-      titleInPrimary: string;
+      text: string;
       textInPrimary: string;
       textTitle: string;
       textComplement: string;
       textBase: string;
-      lineInWhite: string;
+      inputColor: string;
+      inputPlaceholder: string;
       inputBackground: string;
+      backgroundNav: string;
+      productBackground: string;
+      productPrice: string;
       buttonText: string;
-      boxBase: string;
-      boxFooter: string;
-      smallInfo: string;
+      buttonBackground: string;
+      isErrorred: string;
+      isFocused: string;
     };
   }
 }

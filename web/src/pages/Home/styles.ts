@@ -2,7 +2,7 @@ import styled from "styled-components";
 import loja from "../../assets/img/loja.png";
 
 export const Container = styled.div`
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: #fff;
   align-items: center;
 `;
 
@@ -20,7 +20,7 @@ export const NavHome = styled.div`
   margin: 0 auto;
   display: flex;
   max-width: 95rem;
-  background: ${(props) => props.theme.colors.background};
+  background: #fff;
   flex-wrap: wrap;
   a {
     background: #3568;

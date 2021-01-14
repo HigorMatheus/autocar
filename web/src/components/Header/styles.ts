@@ -5,15 +5,20 @@ interface IStyledNavProps {
 }
 
 export const Container = styled.div`
-  background-color: ${({ theme }) => theme.colors.primary};
+  top: 0;
+  background-color: #e5e5e5;
   height: 5rem;
+  /* max-width: 100rem;
+  margin: 0 auto; */
   align-items: center;
 `;
 
 export const Nav = styled.nav`
-  /* width: 100%; */
+  max-width: 100rem;
+  margin: 0 auto;
+
   height: 5rem;
-  border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
+  /* border-bottom: 2px solid ${({ theme }) => theme.colors.secondary}; */
   padding: 0 20px;
   display: flex;
   justify-content: start;
@@ -40,8 +45,7 @@ export const MenuIcon = styled.div<IStyledNavProps>`
 
   svg {
     font-size: 3rem;
-    color: ${({ theme, open }) =>
-      open ? theme.colors.secondary : theme.colors.secondary};
+    color: ${({ open }) => (open ? "#fff" : "#000ee00")};
     @media (min-width: 767px) {
       display: none;
     }
@@ -61,13 +65,20 @@ export const NavMenu = styled.ul<IStyledNavProps>`
     padding: 18px 10px;
     text-decoration: none;
     /* margin: 0 auto; */
-    color: ${(props) => props.theme.colors.textBase};
+    color: #191919;
     font-size: 1.5rem;
+  }
+  button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 18px 10px;
   }
 
   @media (max-width: 768px) {
     flex-flow: column nowrap;
-    background-color: ${(props) => props.theme.colors.background};
+    background-color: #3e3b47;
     position: fixed;
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
     top: 0;
@@ -78,7 +89,7 @@ export const NavMenu = styled.ul<IStyledNavProps>`
     transition: transform 0.3s ease-in-out;
 
     a {
-      color: ${(props) => props.theme.colors.textBase};
+      color: #fff;
     }
   }
 `;

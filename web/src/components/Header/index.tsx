@@ -1,18 +1,20 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
 import { Link } from "react-router-dom";
-import Switch from "react-switch";
-import { ThemeContext } from "styled-components";
+
 import logo from "../../assets/img/logo2.png";
+import { useAuth } from "../../hooks/Auth";
+
 import { Container, Nav, NavMenu, MenuIcon } from "./styles";
 
-interface Iheaderprops {
-  toggleTheme(): void;
-}
-const Header: React.FC<Iheaderprops> = ({ toggleTheme }) => {
-  const { colors, title } = useContext(ThemeContext);
+// interface Iheaderprops {
+//   page: string;
+// }
+const Header: React.FC = () => {
   const [open, setOpen] = useState(false);
+  const { user, signOut } = useAuth();
+
   return (
     <Container>
       <Nav>
@@ -21,22 +23,24 @@ const Header: React.FC<Iheaderprops> = ({ toggleTheme }) => {
           {open ? <FiX /> : <FiMenu />}
         </MenuIcon>
         <NavMenu open={open}>
-          <Link to="/">Home</Link>
-          <Link to="/products">Products</Link>
-          <Link to="/profile">Profile</Link>
-          <Link to="/signin">Signin</Link>
-
-          <Switch
-            onChange={toggleTheme}
-            checked={title === "dark"}
-            checkedIcon={false}
-            uncheckedIcon={false}
-            height={10}
-            width={40}
-            handleDiameter={20}
-            offColor={colors.secondaryDark}
-            onColor={colors.primaryDark}
-          />
+          {user ? (
+            <>
+              <Link to="/">Home</Link>
+              <Link to="/products">Products</Link>
+              <Link to="/profile">Profile</Link>
+              <button type="button" onClick={signOut}>
+                {" "}
+                sair
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to="/">Home</Link>
+              <Link to="/products">Products</Link>
+              <Link to="/profile">Profile</Link>
+              <Link to="/signin">Signin</Link>
+            </>
+          )}
         </NavMenu>
       </Nav>
     </Container>

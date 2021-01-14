@@ -8,16 +8,23 @@ export default createGlobalStyle`
   * {
     margin: 0;
     bottom: 0;
+    outline: 0;
+
   }
+
 
   p, h1, h2,h3{
     margin: 0;
     font-size: 16px
   }
-  #root{
+
+  html, body,#root{
     margin:0;
     padding: 0;
     border:0;
+    bottom: 0;
+    height: 100vh;
+
   }
 
   @media ( min-width: 700px){
