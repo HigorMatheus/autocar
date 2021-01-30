@@ -36,7 +36,9 @@ class CreateUserService {
 
     const userCreated = await this.usersRepository.CreateUser(user);
 
-    return userCreated;
+    const userCreatedSave = await this.usersRepository.save(userCreated);
+
+    return userCreatedSave;
   }
 }
 

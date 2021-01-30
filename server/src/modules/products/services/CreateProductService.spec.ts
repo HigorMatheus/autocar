@@ -18,9 +18,9 @@ describe('CreateProduct', (): void => {
     const product = await createProduct.execute({
       title: 'Macbook',
 
-      cost: '10.600',
+      cost: 10600.99,
 
-      quantity: '25',
+      quantity: 25,
     });
     expect(product).toHaveProperty('id');
   });

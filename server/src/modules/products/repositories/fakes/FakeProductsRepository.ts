@@ -1,10 +1,14 @@
-import { ICreateProduct } from '@modules/products/dtos/IProductDTO';
+import ICreateProduct from '@modules/products/dtos/IProductDTO';
 import Product from '@modules/products/infra/typeorm/entities/Product';
 import { uuid } from 'uuidv4';
-import { IProductsRepository } from '../IProductsRepository';
+import IProductsRepository from '../IProductsRepository';
 
 class FakeProductsRepository implements IProductsRepository {
   private productsRepository: Product[] = [];
+
+  public async ListProducts(): Promise<Product[] | []> {
+    return this.productsRepository;
+  }
 
   public async CreateProduct({
     cost,
@@ -21,6 +25,10 @@ class FakeProductsRepository implements IProductsRepository {
     };
     this.productsRepository.push(product);
 
+    return product;
+  }
+
+  public async save(product: Product): Promise<Product> {
     return product;
   }
 }

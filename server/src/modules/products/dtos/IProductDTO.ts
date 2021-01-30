@@ -1,7 +1,7 @@
-export interface ICreateProduct {
+export default interface ICreateProduct {
   title: string;
 
-  cost: string;
+  cost: number;
 
-  quantity: string;
+  quantity: number;
 }

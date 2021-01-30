@@ -4,10 +4,15 @@ import UsersRepository from '@modules/users/infra/typeorm/repositories/UsersRepo
 import IUsersRepository from '@modules/users/repositories/IUsersRepository';
 
 import '@modules/users/providers';
-// import { IUserTokensRepository } from '@modules/users/repositories/IUserTokensRepository';
-// import UserTokenRepository from '@modules/users/infra/typeorm/repositories/UserTokenRepository';
+import IProductsRepository from '@modules/products/repositories/IProductsRepository';
+import ProductsRepository from '@modules/products/infra/typeorm/repositories/productsRepository';
 
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',
   UsersRepository,
+);
+
+container.registerSingleton<IProductsRepository>(
+  'ProductsRepository',
+  ProductsRepository,
 );
