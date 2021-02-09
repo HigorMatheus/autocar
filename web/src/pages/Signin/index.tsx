@@ -41,7 +41,7 @@ const Signin: React.FC = () => {
 
         await signIn({ email: data.email, password: data.password });
 
-        history.push("dashboard");
+        history.push("products");
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErros(err);
@@ -49,7 +49,7 @@ const Signin: React.FC = () => {
           return;
         }
         // eslint-disable-next-line no-alert
-        alert("erro na auth");
+        alert("erro na autenticação");
       }
     },
     [signIn, history]

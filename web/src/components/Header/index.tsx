@@ -28,6 +28,7 @@ const Header: React.FC = () => {
               <Link to="/">Home</Link>
               <Link to="/products">Products</Link>
               <Link to="/profile">Profile</Link>
+              <Link to="/product/create">Create product</Link>
               <button type="button" onClick={signOut}>
                 {" "}
                 sair

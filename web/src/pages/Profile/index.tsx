@@ -101,12 +101,6 @@ const Profile: React.FC = () => {
         <h1>Profile</h1>
         <Input name="name" icon={FiPower} placeholder="Nome" />
         <Input name="email" icon={FiMail} placeholder="E-mail" />
-        {/* <Input
-          name="password"
-          icon={FiLock}
-          type="password"
-          placeholder="Senha"
-        /> */}
         <Button type="submit">Atualizar</Button>
       </Form>
     </Container>

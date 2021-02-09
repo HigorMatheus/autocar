@@ -12,7 +12,7 @@ import { AuthProvider } from "./hooks/Auth";
 const App: React.FC = () => {
   const [theme, setTheme] = usePersistedState<DefaultTheme>("theme", dark);
 
-  const toggleTheme = useCallback(() => {
+  useCallback(() => {
     setTheme(theme.title === "light" ? dark : light);
   }, [theme, setTheme]);
 
