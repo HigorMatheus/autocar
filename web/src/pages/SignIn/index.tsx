@@ -14,18 +14,18 @@ import { useAuth } from "../../hooks/Auth";
 import Button from "../../components/button";
 import Header from "../../components/Header";
 
-interface ISigninFormData {
+interface ISignInFormData {
   email: string;
   password: string;
 }
-const Signin: React.FC = () => {
+const SignIn: React.FC = () => {
   const history = useHistory();
 
   const { signIn } = useAuth();
 
   const formRef = useRef<FormHandles>(null);
   const handleSubmit = useCallback(
-    async (data: ISigninFormData): Promise<void> => {
+    async (data: ISignInFormData): Promise<void> => {
       try {
         formRef.current?.setErrors({});
         const schema = Yup.object().shape({
@@ -76,4 +76,4 @@ const Signin: React.FC = () => {
   );
 };
 
-export default Signin;
+export default SignIn;

@@ -6,7 +6,7 @@ export const Container = styled.div`
   align-items: center;
 `;
 
-export const Baner = styled.div`
+export const Banner = styled.div`
   display: flex;
   flex: 1;
   background: url(${loja}) no-repeat center;

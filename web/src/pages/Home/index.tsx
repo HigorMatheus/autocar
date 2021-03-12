@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import api from "../../services/api";
 
-import { Baner, Container, NavHome, ProductList, Product } from "./styles";
+import { Banner, Container, NavHome, ProductList, Product } from "./styles";
 
 interface IProduct {
   id: string;
@@ -24,7 +24,7 @@ const Home: React.FC = () => {
   return (
     <Container>
       <Header />
-      <Baner />
+      <Banner />
 
       <NavHome>
         <Link to="products">

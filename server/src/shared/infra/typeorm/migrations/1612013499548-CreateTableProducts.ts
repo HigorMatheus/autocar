@@ -6,7 +6,6 @@ export default class CreateTableProducts1612013499548
     await queryRunner.createTable(
       new Table({
         name: 'products',
-
         columns: [
           {
             name: 'id',
